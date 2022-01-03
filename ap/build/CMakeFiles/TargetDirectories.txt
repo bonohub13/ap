@@ -1,8 +1,0 @@
-/home/kensuke/workspaces/c_cpp/utils/applyPatch/ap/build/CMakeFiles/edit_cache.dir
-/home/kensuke/workspaces/c_cpp/utils/applyPatch/ap/build/CMakeFiles/rebuild_cache.dir
-/home/kensuke/workspaces/c_cpp/utils/applyPatch/ap/build/src/CMakeFiles/ap.dir
-/home/kensuke/workspaces/c_cpp/utils/applyPatch/ap/build/src/CMakeFiles/edit_cache.dir
-/home/kensuke/workspaces/c_cpp/utils/applyPatch/ap/build/src/CMakeFiles/rebuild_cache.dir
-/home/kensuke/workspaces/c_cpp/utils/applyPatch/ap/build/include/utils/CMakeFiles/ap_pkg.dir
-/home/kensuke/workspaces/c_cpp/utils/applyPatch/ap/build/include/utils/CMakeFiles/edit_cache.dir
-/home/kensuke/workspaces/c_cpp/utils/applyPatch/ap/build/include/utils/CMakeFiles/rebuild_cache.dir
