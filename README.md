@@ -12,9 +12,9 @@
 ```
 git clone https://github.com/bonohub13/apply_patch
 ```
-2. Create `build` directory under `apply_patch`.
+2. Create `build` directory under `apply_patch/ap`.
 ```
-cd apply_patch && mkdir build
+cd apply_patch/ap && mkdir build
 ```
 3. Build under `build` directory.
 ```
