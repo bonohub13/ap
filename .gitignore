@@ -1,4 +1,4 @@
-./ap/include/utils/tags
+./**/tags
 ./ap/build
 ./ap/build/include/utils/CMakeFiles/ap_pkg.dir/build.make
 ./ap/build/include/utils/CMakeFiles/ap_pkg.dir/compiler_depend.make

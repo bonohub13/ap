@@ -1,8 +1,10 @@
 #pragma once
 #include <algorithm>
 #include <ctime>
+#include <string>
 
 #include "file.hpp"
+#include "err.hpp"
 
 namespace ap {
     class PatchUtils {

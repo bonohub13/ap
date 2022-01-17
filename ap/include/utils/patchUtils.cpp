@@ -101,10 +101,10 @@ int ap::PatchUtils::applyPatch(const std::string &tgt_path,
         } else {
             std::string tmp_src_path = p_src;
             std::ostringstream oss_tgt_path;
-            size_t pos = tmp_p_path.find(ap_file.get_src_path());
+            size_t pos = tmp_src_path.find(ap_file.get_src_path());
 
             tmp_src_path.erase(pos, ap_file.get_src_path().length());
-            if (tmp_src_path.starts_with('/')) {
+            if (tmp_src_path[0] == '/') {
                 oss_tgt_path << ap_file.get_patch_path() << tmp_src_path;
             } else {
                 oss_tgt_path << ap_file.get_patch_path() << "/" << tmp_src_path;
@@ -127,16 +127,21 @@ int ap::PatchUtils::applyPatch(const std::string &tgt_path,
             ap_file.fcopy(p_src, oss_tgt_path.str());
         }
     }
+
+    return ap::ERR_CODE::NO_ERROR;
 }
 
 std::vector<std::string> ap::PatchUtils::split_string_by_delimiter(
         const std::string &str, const char &delimiter) {
+    size_t pos = 0;
     std::vector<std::string> ret_val;
     std::string line;
-    std::ostringstream oss(str);
+    std::string input_str = str;
 
-    while (std::getline(ss, line, delimiter)) {
+    while ((pos = input_str.find(delimiter)) != std::string::npos) {
+        line = input_str.substr(0, pos);
         ret_val.push_back(line);
+        input_str.erase(0, pos + 1);
     }
 
     return ret_val;

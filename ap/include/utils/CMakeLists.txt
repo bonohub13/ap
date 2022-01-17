@@ -1,5 +1,6 @@
 add_library(ap_pkg
   SHARED
+    err.cpp
     file.cpp
     patchUtils.cpp
 )

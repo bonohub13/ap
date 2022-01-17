@@ -6,11 +6,14 @@ namespace ap {
     /**
      * Error codes for when the program fails
      */
-    enum class ERR_CODE {
-        NO_ERROR,
-        FILE_NOT_EXIST,
-        DIRECTORY_NOT_EXIST,
-        INVALID_ARGUMENT
+    struct ERR_CODE {
+        enum ERR_CODES {
+            NO_ERROR,
+            FILE_NOT_EXIST,
+            DIRECTORY_NOT_EXIST,
+            FAILED_TO_REMOVE_FILE,
+            INVALID_ARGUMENT
+        } ERR_CODES;
     };
 
     /**
@@ -19,30 +22,16 @@ namespace ap {
      * Example:
      *      std::ostringstream ostr;
      *
-     *      ostr << ERR_MSG.FILE_NOT_EXIST['H'] << "something..."
-     *           << ERR_MSG.FILE_NOT_EXIST['T'];
+     *      ostr << ERR_MSG.FILE_NOT_EXIST.at('H') << "something..."
+     *           << ERR_MSG.FILE_NOT_EXIST.at('T');
      *      // Extract string
      *      ostr.str();
      */
-    const struct ERR_MSG {
-        std::map<char, std::string> FILE_NOT_EXIST;
-        std::map<char, std::string> DIRECTORY_NOT_EXIST;
-        std::map<char, std::string> INVALID_ARGUMENT;
-    } ERR_MSG = {
-        // FILE_NOT_EXIST
-        {
-            {'H', "ERR: File "},
-            {'T', " does not exist."},
-        },
-        // DIRECTORY_NOT_EXIST
-        {
-            {'H', "ERR: Directory "},
-            {'T', " does not exist."},
-        },
-        // INVALID_ARGUMENT
-        {
-            {'H', "ERR: Argument "},
-            {'T', " is invalid.\nCheck the manual with \"--help\" option"},
-        }
+    class ERR_MSG_t {
+        public:
+            std::string get_FILE_NOT_EXIST(const char &key) const;
+            std::string get_DIRECTORY_NOT_EXIST(const char &key) const;
+            std::string get_FAILED_TO_REMOVE_FILE(const char &key) const;
+            std::string get_INVALID_ARGUMENT(const char &key) const;
     };
 } // namespace ap
